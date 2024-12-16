@@ -1,36 +1,45 @@
-# -AI-Powered-One-Up-Puzzle-Solver
+# AI Powered One-Up Puzzle Solver
 
-# Comparative Analysis of Object Tracking Algorithms
+This repository contains the project **AI Powered One-Up Puzzle Solver**, which uses artificial intelligence to solve the logic-based "One-Up Puzzle" game. The puzzle is solved using backtracking and forward propagation techniques, enhanced by visualization tools.
 
-This repository contains the project **"Comparative Analysis of Object Tracking Algorithms: Mean Shift vs. CSRT"**, focused on evaluating and contrasting the performance of object tracking algorithms in dynamic environments. The work leverages Python, NumPy, and OpenCV libraries.
+## Abstract
+The "One-Up Puzzle" is played on an `n x n` grid containing walls, blocks, and valid cells. The objective is to assign numbers to valid cells while adhering to constraints in segmented regions. The project employs:
+- **Backtracking** for exploring possible assignments.
+- **Forward Propagation** for reducing the solution space.
+- **Visualization Tools** to represent the grid and solution.
 
-## Objective
-To analyze and compare the effectiveness of the Mean Shift and CSRT (Discriminative Correlation Filter with Channel and Spatial Reliability) object tracking algorithms in handling dynamic scenarios, including scale changes, occlusion, and environmental variability.
+This project explores constraint satisfaction problems (CSPs) and demonstrates computational methods for solving structured problems in both recreational and real-world scenarios.
 
-## Key Features
-- **Algorithm Implementation**: Mean Shift and CSRT trackers implemented using OpenCV.
-- **Performance Evaluation**: Comparative study based on:
-  - Tracking robustness
-  - Computational efficiency
-  - Adaptability to dynamic environments
-- **Experimentation**:
-  - Dynamic sequences with occlusion and scale changes
-  - Static sequences for controlled evaluation
+We are solving the puzzle from [One-Up Puzzle](https://www.oneuppuzzle.com/).
 
-## Findings
-- **CSRT Tracker**:
-  - Superior in handling scale changes and occlusion.
-  - More accurate in dynamic and complex environments.
-- **Mean Shift Tracker**:
-  - Efficient for simpler, static scenarios.
-  - Limited adaptability to dynamic environments.
+## Methodology
+1. **Puzzle Representation**:
+   - Grids are encoded into string representations for computational efficiency.
+     - `gamestr_h` for horizontal details (rows).
+     - `gamestr_v` for vertical details (columns).
+   - Parsed strings are converted into numerical formats for algorithmic manipulation.
+2. **Algorithms**:
+   - **Backtracking**: Systematically assigns values to cells and retracts invalid assignments.
+   - **Forward Propagation**: Reduces domains of adjacent cells for efficiency.
+   - **Heuristics**: Prioritizes constrained cells to minimize computation.
+3. **Visualization**:
+   - Renders the puzzle grid, highlighting walls, blocks, and assigned values.
+   - Color-coded numbers aid in interpretation and debugging.
 
-## Tools and Technologies
-- **Programming Language**: Python
-- **Libraries**: OpenCV, NumPy
-- **Environment**: Configured for experimentation in both controlled and dynamic conditions.
+## Challenges
+- **Scalability**: Larger grids exponentially increase the solution space.
+- **Complexity**: Parsing and converting diverse grid layouts.
+- **Variability**: Handling diverse configurations while maintaining performance.
 
-## How to Run
+## Future Work
+- **Image Processing Integration**:
+  - Use OpenCV and OCR for grid input directly from images or screenshots.
+  - Detect grid boundaries, walls, blocks, and numerical values automatically.
+- **Interactive Solver**:
+  - Real-time solving with improved visualization.
+  - Enhance accuracy and speed of OCR processing.
+
+## How to Use
 1. Clone the repository:
    ```bash
    git clone <repository-url>
@@ -39,22 +48,22 @@ To analyze and compare the effectiveness of the Mean Shift and CSRT (Discriminat
    ```bash
    pip install -r requirements.txt
    ```
-3. Run the scripts:
+3. Run the solver:
    ```bash
-   python mean_shift_tracker.py
-   python csrt_tracker.py
+   python one_up_solver.py
    ```
+4. Visualize results:
+   - Output includes grid state and solution representation.
 
-## Future Enhancements
-- Expanding the analysis to include other trackers such as KCF, MOSSE, and TLD.
-- Implementing real-time tracking scenarios with live video feeds.
-- Enhancing visualization for better comparative insights.
+## References
+1. Simonis, H. (2005). Sudoku as a constraint problem.
+2. Russell, S., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach.
+3. Knuth, D. E. (2000). Dancing links.
+4. Korf, R. E. (1985). Depth-first iterative-deepening: An optimal admissible tree search.
 
-## Contributions
-Contributions, issues, and feature requests are welcome! Feel free to fork the repository and submit a pull request.
-
----
-
-For more details, check out the project report or reach out via email.
-
-
+## Contributors
+- Dharanidhar Manne
+- Cholayaswanth Kumar Golla
+- Ravi Prasad Grandhi
+- Sravya Reddy Kaitha
+- Jitendra Kadiyam
